@@ -1,0 +1,20 @@
+<div [ngClass]="unit">
+{{info}}
+<hr>
+<h2 [style.color]="'black'"> Data will be field here</h2>
+<button (click)="changeColor()">Submit</button>
+
+ 
+  <br>
+<ul>
+  <li *ngFor="let n of items">{{n}}</li>
+</ul>
+
+
+<input type="text" [(ngModel)]="current">
+<button (click)="addItems()" >Add {{info}}</button>
+</div>
+  
+
+
+

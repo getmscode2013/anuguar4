@@ -1,0 +1,10 @@
+.banner
+{
+    width: 90%;
+    height: 130px;
+    border: 2px dashed rgb(5, 102, 102);
+    color: rgb(210, 219, 75);
+    background-color: darkslateblue;
+    padding:  10px;
+    box-sizing:  border-box;
+}
