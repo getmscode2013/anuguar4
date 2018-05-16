@@ -1,0 +1,11 @@
+<div class="course" style="border: 1px solid red">
+  <div class="courcepic">
+ <img src="../../../../assets/images/{{current.image}}" style="width:100% ">
+  </div>
+  <h3 align="center">{{current.name | uppercase}}</h3>
+  <div class="price">
+    {{current.price | currency : 'INR'}}
+  </div>
+  <div class=offer>{{dummy | offercode:current.price}}</div> <!--User defined pipes-->
+  <h5 align="justify">{{current.description}}</h5>
+</div>

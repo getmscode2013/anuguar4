@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { MenubarComponent } from './menubar/menubar.component';
@@ -15,6 +16,14 @@ import { OffersComponent } from './routes/offers/offers.component';
 import { NewcourcesComponent } from './routes/newcources/newcources.component';
 import { ReviewsComponent } from './routes/reviews/reviews.component';
 import { VirtualclassComponent } from './routes/virtualclass/virtualclass.component';
+import {CourseService } from './course.service';
+import {ReviewService } from './review.service';
+import { CourselistComponent } from './routes/home/courselist/courselist.component';
+import { CourseComponent } from './routes/home/course/course.component';
+import { ReviewComponent } from './routes/reviews/review/review.component';
+import { ReviewlistComponent } from './routes/reviews/reviewlist/reviewlist.component';
+import { OffercodePipe } from './offercode.pipe';
+import { FiltercoursePipe } from './filtercourse.pipe';
 
 const routes = [
   {path : "",component:HomeComponent},
@@ -38,12 +47,18 @@ const routes = [
     OffersComponent,
     NewcourcesComponent,
     ReviewsComponent,
-    VirtualclassComponent
+    VirtualclassComponent,
+    CourselistComponent,
+    CourseComponent,
+    ReviewComponent,
+    ReviewlistComponent,
+    OffercodePipe,
+    FiltercoursePipe
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(routes)
+    BrowserModule, RouterModule.forRoot(routes), HttpClientModule, FormsModule
   ],
-  providers: [],
+  providers: [CourseService, ReviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
